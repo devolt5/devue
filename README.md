@@ -1,4 +1,11 @@
-# devue
+# DeVue
+
+## VueJS Playground build with NuxtJS
+
+Roadmap:  
+* i18n and Routing
+* Login
+* Axios to AuthAPI
 
 ## Build Setup
 

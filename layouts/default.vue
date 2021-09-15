@@ -1,44 +1,33 @@
 <template>
   <v-app>
-      <v-app-bar
-      app
-      flat
-      style="position: absolute; z-index: 10"
-      color="primary lighten-2"
-      class="desktop-bar hidden-sm-and-down"
-      height="100"
-    >
+    <v-app-bar flat color="primary lighten-2" height="80">
       <v-img
-        class="float-left pt-3"
         :src="require('@/assets/logo.png')"
         contain
         max-height="80"
         max-width="280"
       />
     </v-app-bar>
-    <v-app-bar
-      app
-      flat
-      style="position: absolute; z-index: 10"
-      color="primary lighten-2"
-      class="mobile-bar hidden-md-and-up"
-      height="120"
-    >
-      <v-img
-        class="float-left pt-3 mobile-logo"
-        :src="require('@/assets/logo.png')"
-        max-width="100px"
-        min-height="100px"
-      />
-    </v-app-bar>
-    <v-app-bar
-      app
-      color="primary lighten-2"
-      style="position: relative"
-      class="hidden-sm-and-down mt-15"
-    >
+    <v-navigation-drawer class="hidden-sm-and-up" v-model="sidebar" app>
+      <v-list nav dense>
+        <v-list-item-group active-class="grey--text">
+          <v-list-item
+            v-for="item in nav"
+            :key="item.icon"
+            :to="item.path"
+            :title="item.title"
+            text
+            >{{ item.text }}</v-list-item
+          >
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar height="10">
       <template v-slot:extension>
-        <v-item-group>
+        <span class="hidden-sm-and-up">
+          <v-app-bar-nav-icon @click="sidebar = !sidebar"> </v-app-bar-nav-icon>
+        </span>
+        <v-item-group class="hidden-xs-only">
           <v-btn
             v-for="item in nav"
             :key="item.icon"
@@ -60,28 +49,6 @@
         >
       </template>
     </v-app-bar>
-    <v-app-bar app color="primary lighten-2" style="margin-top: 7.5em; position: relative;" class="hidden-md-and-up">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>SCDH Mobile title</v-app-bar-title>
-    </v-app-bar>
-
-    <v-navigation-drawer style="margin-top: 7.5em;" v-model="drawer" absolute left temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item
-            v-for="item in nav"
-            :key="item.icon"
-            :to="item.path"
-            :title="item.title"
-            text
-            >{{ item.text }}</v-list-item
-          >
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
 
     <v-main>
       <v-container>
@@ -118,7 +85,8 @@ export default {
   data: () => ({
     langBtn: "en",
     drawer: false,
-    group: null,
+    appTitle: "DeVue",
+    sidebar: false,
     nav: [
       {
         icon: "home",
@@ -153,11 +121,11 @@ export default {
       this.drawer = false;
     }
   },
-  created: function () {
+  created: function() {
     this.$vuetify.lang.current = "de";
   },
   methods: {
-    changeLang: function () {
+    changeLang: function() {
       const currentlang = this.$vuetify.lang.current === "en" ? "de" : "en";
       this.$vuetify.lang.current = currentlang;
       i18n.locale = currentlang;
@@ -169,7 +137,7 @@ export default {
 
 <style scoped>
 .mobile-logo >>> .v-image__image {
-    background-position: -94px 7px !important;
-    background-size: 310px !important;
+  background-position: -94px 7px !important;
+  background-size: 310px !important;
 }
 </style>

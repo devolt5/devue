@@ -1,13 +1,58 @@
-# DeVue
+<p align="center">
+<img src="devue.png" alt="Logo" width="200">
 
-## VueJS Playground build with NuxtJS
+  <h3 align="center">DeVue</h3>
 
-Roadmap:  
-* i18n and Routing
-* Login
-* Axios to AuthAPI
+  <p align="center">
+    VueJS Playground build with NuxtJS
+    <br />
+    <a href="https://github.com/devolt5/devue"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/devolt5/devue">View Demo (WIP)</a>
+    ·
+    <a href="https://github.com/devolt5/devue/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/devolt5/devue/issues">Request Feature</a>
+  </p>
+</p>
 
-## Build Setup
+
+This app is designed to help you get to know VueJS and Nuxt better. Also, it can be useful to implement the latest JS features.
+
+I am open to suggestions and of course collaboration.  
+Any feature may be included as long as it meets certain conditions.  
+
+These include:  
+1. The feature should be up to date in terms of packages
+2. The feature should include unit tests.
+
+The following features are planned:  
+
+* The app should include a login page
+* The app should be able to login to a web service that handles logins via JWT, currently planned is a Flask backend or an ExpressJS backend.
+* The app should use simple CRUD operations against the webservice, for this it should use current technologies, i.e. Axios and Promises.
+* The app should perform authentication and authorization taking into account all security aspects (CORS, XSS aspects, see OWASP)
+
+The following tools should be used:  
+
+* VueJS routing
+* i18n (already implemented)
+* Vuex Store
+
+But the most important thing is that the app should serve as a **template/starting point** for further apps.   
+Therefore there is always a focus on the architecture.
+
+Questions that are still open:  
+
+* To what extent should Typescript be used?
+* Should JSS, SASS or CSS be used?
+
+## Roadmap
+
+See the [open issues](https://github.com/devolt5/devue/issues) for a list of proposed features (and known issues).
+
+### Installation
 
 ```bash
 # install dependencies
@@ -26,7 +71,7 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## Special Directories in NuxtJS
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
@@ -74,3 +119,20 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+

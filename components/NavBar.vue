@@ -47,7 +47,7 @@
         <v-btn
           v-for="locale in availableLocales"
           :key="locale.code"
-          :to="switchLocalePath(locale.code)"
+          @click.prevent.stop="$i18n.setLocale(locale.code)"
           fab
           small
           class="mb-3 ml-3"

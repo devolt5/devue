@@ -3,7 +3,6 @@ import Vuetify from "vuetify";
 import { shallowMount } from "@vue/test-utils";
 
 describe("NavBar.vue", () => {
-
   // we need Vuetify for breakpoints etc.
   let vuetify;
   beforeEach(() => {
@@ -17,7 +16,7 @@ describe("NavBar.vue", () => {
       // mocks: {
       //   $vuetify: { breakpoint: {} }
       // },
-      vuetify
+      vuetify,
     });
     expect(wrapper.vm).toBeTruthy();
   });

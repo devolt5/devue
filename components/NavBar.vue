@@ -1,9 +1,14 @@
 <template>
   <div>
     <v-app-bar flat color="primary lighten-2" height="80">
-      <v-img src="@/assets/logo.png" contain max-height="80" max-width="280" />
+      <v-img
+        src="_nuxt/assets/logo.png"
+        contain
+        max-height="80"
+        max-width="280"
+      />
     </v-app-bar>
-    <v-navigation-drawer class="hidden-sm-and-up" v-model="sidebar" app>
+    <v-navigation-drawer v-model="sidebar" class="hidden-sm-and-up" app>
       <v-list nav dense>
         <v-list-item-group active-class="grey--text">
           <v-list-item
@@ -12,15 +17,16 @@
             :to="item.path"
             :title="item.title"
             text
-            >{{ item.text }}</v-list-item
           >
+            {{ item.text }}
+          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar height="10">
-      <template v-slot:extension>
+      <template #extension>
         <span class="hidden-sm-and-up">
-          <v-app-bar-nav-icon @click="sidebar = !sidebar"> </v-app-bar-nav-icon>
+          <v-app-bar-nav-icon @click="sidebar = !sidebar" />
         </span>
         <v-item-group class="hidden-xs-only">
           <v-btn
@@ -29,26 +35,27 @@
             :to="item.path"
             :title="item.title"
             text
-            >{{ item.text }}</v-btn
           >
+            {{ item.text }}
+          </v-btn>
         </v-item-group>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-checkbox
-          class="mt-3"
           v-model="$vuetify.theme.dark"
+          class="mt-3"
           off-icon="mdi-brightness-2"
           on-icon="mdi-brightness-5"
-        ></v-checkbox>
+        />
         <v-btn
           v-for="locale in availableLocales"
           :key="locale.code"
-          @click.prevent.stop="$i18n.setLocale(locale.code)"
           fab
           small
           class="mb-3 ml-3"
+          @click.prevent.stop="$i18n.setLocale(locale.code)"
         >
-          {{ locale.code }}</v-btn
-        >
+          {{ locale.code }}
+        </v-btn>
       </template>
     </v-app-bar>
   </div>

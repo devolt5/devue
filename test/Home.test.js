@@ -1,23 +1,23 @@
 import Home from "@/components/Home";
-import { createLocalVue, mount, shallowMount } from "@vue/test-utils";
+import Vuetify from "vuetify";
+import { createLocalVue, shallowMount } from "@vue/test-utils";
 
 describe("Home.vue", () => {
-  // TODO make clear, if these lines are needed later on
-  // const localVue = createLocalVue();
-  // let vuetify;
+  const localVue = createLocalVue();
+  let vuetify;
 
-  // beforeEach(() => {
-  //   vuetify = new Vuetify();
-  // });
+  beforeEach(() => {
+    vuetify = new Vuetify();
+  });
 
+  // needed for i18n
   const $t = () => {};
 
   it("should mount correctly", () => {
-    // can use "shallowMount" also, but "mount" covers more
-    const wrapper = mount(Home, {
+    const wrapper = shallowMount(Home, {
       mocks: { $t },
-      // localVue,
-      // vuetify
+      localVue,
+      vuetify,
     });
     expect(wrapper.vm).toBeTruthy();
   });

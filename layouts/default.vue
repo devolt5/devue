@@ -1,6 +1,6 @@
 <template>
   <v-app>
-  <NavBar :localeCode="localeCode" />
+    <NavBar :locale-code="localeCode" />
     <v-main>
       <v-container>
         <Nuxt />
@@ -18,18 +18,15 @@
 </template>
 
 <script>
-import NavBar from "../components/NavBar";
-
 export default {
   name: "App",
   data: () => ({
     appTitle: "DeVue",
   }),
-  created: function() {
-    this.localeCode = this.$i18n.locale
-  }
+  created: function () {
+    this.localeCode = this.$i18n.locale;
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,0 +1,6 @@
+coverage
+.github
+.nuxt
+node_modules
+static
+*.png

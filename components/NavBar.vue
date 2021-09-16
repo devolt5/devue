@@ -1,12 +1,7 @@
 <template>
   <div>
     <v-app-bar flat color="primary lighten-2" height="80">
-      <v-img
-        :src="require('@/assets/logo.png')"
-        contain
-        max-height="80"
-        max-width="280"
-      />
+      <v-img src="@/assets/logo.png" contain max-height="80" max-width="280" />
     </v-app-bar>
     <v-navigation-drawer class="hidden-sm-and-up" v-model="sidebar" app>
       <v-list nav dense>

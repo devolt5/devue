@@ -31,6 +31,12 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     "@nuxtjs/vuetify",
   ],
+  serverMiddleware: [
+    { path: "/api", handler: "~/api/api.js" },
+    { path: "/api/user", handler: "~/api/user.js" },
+    { path: "/api/helloworld", handler: "~/api/helloworld.js" }
+  ],
+  
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

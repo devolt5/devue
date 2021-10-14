@@ -1,10 +1,11 @@
 <template>
-  <div><Home /></div>
+  <div>
+    <Home />
+    <DragAndDrop />
+  </div>
 </template>
 
 <script>
-import Home from "../components/Home";
-
 export default {
   name: "Index",
   data: () => ({}),
